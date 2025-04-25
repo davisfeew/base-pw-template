@@ -6,7 +6,11 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "outDir": "dist",
-    "types": ["node", "@playwright/test"]
+    "types": ["node", "mocha", "chai", "@playwright/test"]
   },
-  "include": ["tests", "playwright.config.ts"]
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "playwright.config.ts"
+  ]
 }

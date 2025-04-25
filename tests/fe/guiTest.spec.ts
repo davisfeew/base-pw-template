@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
-import {GoogleHomePageDesktop} from "../pageObjects/google/googleHomePage.desktop";
-import {HomePageDesktop} from "../pageObjects/mafiniEshop/homePage.desktop";
-import {ProductPageDesktop} from "../pageObjects/mafiniEshop/productPage.desktop";
+import {GoogleHomePageDesktop} from "../../pageObjects/google/googleHomePage.desktop";
+import {HomePageDesktop} from "../../pageObjects/mafiniEshop/homePage.desktop";
+import {ProductPageDesktop} from "../../pageObjects/mafiniEshop/productPage.desktop";
 
 let homePage: HomePageDesktop;
 let productPage: ProductPageDesktop;
@@ -15,7 +15,7 @@ test.describe("Google navigate test", () => {
         await google.openSearchedMalfiniEshop();
         await homePage.allowCookies();
         await homePage.typeSearchButton('vertex');
-    })
+    });
     test('Verify product page after search navigate', async () => {
         const selectedName = await homePage.clickSearchDropdownByIndex(0);
         const fullTitle = await productPage.formatSearchedTitle(productPage);

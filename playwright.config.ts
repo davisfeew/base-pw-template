@@ -4,12 +4,12 @@ import { resolve } from 'path';
 export default defineConfig({
     testDir: resolve(__dirname, './tests'),
     timeout: 30 * 1000,
-    retries: 0, // První pokus bez videa, druhý pokus s videem
+    retries: 0,
     use: {
-        headless: true,
+        headless: false,
         viewport: { width: 1280, height: 720 },
         ignoreHTTPSErrors: true,
-        video: 'retry-with-video' // nahrávej video jen při retry
+        video: 'retry-with-video'
     },
     reporter: [
         ['list'],

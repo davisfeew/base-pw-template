@@ -3,3 +3,5 @@ playwright-report
 test-results
 dist
 /tests-results/
+/.idea/base-pw-framework.iml
+/.idea/modules.xml
