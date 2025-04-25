@@ -1,7 +1,6 @@
 import {test, expect} from '@playwright/test';
 import {HomePageDesktop} from "../../../pageObjects/mafiniEshop/homePage.desktop.js";
 import {ProductPageDesktop} from "../../../pageObjects/mafiniEshop/productPage.desktop.js";
-import {GoogleHomePageDesktop} from "../../../pageObjects/google/googleHomePage.desktop.js";
 
 let homePage: HomePageDesktop;
 let productPage: ProductPageDesktop;

@@ -5,7 +5,7 @@ import {ProductPageDesktop} from "../../../pageObjects/mafiniEshop/productPage.d
 let homePage: HomePageDesktop;
 let productPage: ProductPageDesktop;
 
-test.describe("3. parallel test", () => {
+test.describe("7. parallel test", () => {
     test.beforeEach(async ({page}) => {
         homePage = new HomePageDesktop(page);
         productPage = new ProductPageDesktop(page);

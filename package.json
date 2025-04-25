@@ -6,7 +6,7 @@
     "build": "tsc",
     "fe:test": "npx playwright test tests/fe/e2eTests/googleNavigateTest.spec.ts --headed",
     "fe:test:browser:firefox": "npx playwright test tests/fe/parallelTests/1.spec.ts --project=Firefox --headed",
-    "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=10",
+    "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=5",
     "fe:parallel:test": "npx playwright test tests/fe/parallelTests/*.spec.ts --headed --workers=10",
     "fe:responsive:test": "npx playwright test tests/fe/responsiveTest/*.spec.ts --headed --workers=5",
     "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed --workers=5",
