@@ -9,7 +9,7 @@
     "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=10",
     "fe:parallel:test": "npx playwright test tests/fe/parallelTests/*.spec.ts --headed --workers=10",
     "fe:responsive:test": "npx playwright test tests/fe/responsiveTest/*.spec.ts --headed --workers=5",
-    "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed",
+    "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed --workers=5",
     "api:test": "mocha --require ts-node/register --extensions ts tests/api/**/*.spec.ts --timeout 10000",
     "report": "npx playwright show-report",
     "update:visual:snapshot": "npx playwright test --update-snapshots"

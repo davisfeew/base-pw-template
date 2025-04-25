@@ -15,7 +15,7 @@ export default defineConfig({
             maxDiffPixelRatio: 0.02,
         },
     },
-    snapshotPathTemplate: 'tests/__snapshots__/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}-{platform}{ext}',
+    snapshotPathTemplate: 'tests/fe/__snapshots__/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}-{platform}{ext}',
     use: {
         headless: false,
         viewport: {width: 1280, height: 720},
