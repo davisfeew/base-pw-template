@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Frontend (Playwright) Tests') {
             steps {
-                sh 'npm run fe:test:parallel'
+                sh 'npm run fe:parallel:test'
             }
             post {
                 always {
