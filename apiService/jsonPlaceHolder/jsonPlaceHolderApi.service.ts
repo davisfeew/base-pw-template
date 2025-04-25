@@ -1,5 +1,5 @@
-import {ApiService} from "../api.service";
-import {JsonPlaceHolderUrl} from "./jsonPlaceHolderUrl";
+import {ApiService} from "../api.service.ts";
+import {JsonPlaceHolderUrl} from "./jsonPlaceHolderUrl.ts";
 import {AxiosResponse} from "axios";
 
 

@@ -1,10 +1,12 @@
 {
   "name": "playwright-basic-framework",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "test:fe": "npx playwright test tests/fe/guiTest.spec.ts --headed",
-    "test:api": "ts-mocha --esm -p tsconfig.json --timeout 10000 tests/api/**/*.spec.ts",
-    "test:api2": "mocha --loader ts-node/esm --extensions ts --timeout 10000 \"tests/api/**/*.spec.ts\"",
+    "build": "tsc",
+    "test:api": "mocha --require ts-node/register --extensions ts tests/api/**/*.spec.ts --timeout 10000",
+    "test:api2": "npm run test:api -- tests/api/**/*.spec.ts",
     "test:api:getPost": "mocha --timeout 10000 -r ts-node/register tests/getPost.spec.ts",
     "report": "npx playwright show-report"
   },

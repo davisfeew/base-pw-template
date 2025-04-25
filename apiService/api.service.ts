@@ -25,25 +25,25 @@ export class ApiService {
 
     public async GET<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         const res = await this.request<T>('GET', url, undefined, config);
-        console.log(`[API] GET ${url} -> ${res.status}`);
+        console.log(`-----[API] GET ${url} -> ${res.status}`);
         return res;
     }
 
     public async POST<T = any>(url: string, body: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         const res = await this.request<T>('POST', url, body, config);
-        console.log(`[API] POST ${url} -> ${res.status}`);
+        console.log(`-----[API] GET ${url} -> ${res.status}`);
         return res;
     }
 
     public async PUT<T = any>(url: string, body: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         const res = await this.request<T>('PUT', url, body, config);
-        console.log(`[API] PUT ${url} -> ${res.status}`);
+        console.log(`-----[API] GET ${url} -> ${res.status}`);
         return res;
     }
 
     public async DELETE<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         const res = await this.request<T>('DELETE', url, undefined, config);
-        console.log(`[API] DELETE ${url} -> ${res.status}`);
+        console.log(`-----[API] GET ${url} -> ${res.status}`);
         return res;
     }
 }

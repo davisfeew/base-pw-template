@@ -1,7 +1,8 @@
 import { expect } from 'chai';
-import { JsonPlaceHolderApiService } from '../../apiService/jsonPlaceHolder/jsonPlaceHolderApi.service';
+import 'dotenv/config';
+import {JsonPlaceHolderApiService} from "../../apiService/jsonPlaceHolder/jsonPlaceHolderApi.service.js";
 
-describe('JSONPlaceholder API – GET /posts/:id', function () {
+describe(`★ JSONPlaceholder API – GET /posts/:id`, function () {
     // odsud TS ví, že jsonApi je JsonPlaceHolderApiService (no implicit any)
     const jsonApi = new JsonPlaceHolderApiService();
 
@@ -10,6 +11,5 @@ describe('JSONPlaceholder API – GET /posts/:id', function () {
         expect(response.status).to.equal(200);
         expect(response.data).to.be.an('object');
         expect(response.data).to.have.property('id', 1);
-        console.log('Response body:', response.data);
     });
 });

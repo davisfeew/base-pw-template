@@ -1,5 +1,11 @@
+// playwright.config.ts
 import { defineConfig } from '@playwright/test';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// vypočítejme __dirname z import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
     testDir: resolve(__dirname, './tests'),
