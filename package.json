@@ -12,7 +12,7 @@
     "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed --workers=5",
     "api:test": "mocha --require ts-node/register --extensions ts tests/api/**/*.spec.ts --timeout 10000",
     "report": "npx playwright show-report",
-    "update:visual:snapshot": "npx playwright test --update-snapshots"
+    "update:visual:snapshot": "npx playwright test tests/fe/visualTests --update-snapshots --headed"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.0",

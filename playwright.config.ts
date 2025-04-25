@@ -1,4 +1,3 @@
-// playwright.config.ts
 import {defineConfig} from '@playwright/test';
 import {resolve, dirname} from 'path';
 import {fileURLToPath} from 'url';
