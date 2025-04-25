@@ -1,7 +1,6 @@
-import { BasePage } from "../common/basePage";
+import { BasePage } from "../common/basePage.ts";
 import type { Page } from "@playwright/test";
-import {HomePageElement} from "../../pageComponents/mafini/homePage.element";
-import {ProductPageDesktop} from "./productPage.desktop";
+import {HomePageElement} from "../../pageComponents/mafini/homePage.element.ts";
 
 export class HomePageDesktop extends BasePage {
     public malfiniHomePageElement: HomePageElement;
@@ -16,7 +15,7 @@ export class HomePageDesktop extends BasePage {
         await this.allowCookies();
     }
 
-    async visit() {
+     async visit() {
         return await super.visit(process.env.MALFINI_ESHOP_BASE_URL!);
     }
 

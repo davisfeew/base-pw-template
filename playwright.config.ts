@@ -3,7 +3,6 @@ import { defineConfig } from '@playwright/test';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-// vypočítejme __dirname z import.meta.url
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -15,8 +14,25 @@ export default defineConfig({
         headless: false,
         viewport: { width: 1280, height: 720 },
         ignoreHTTPSErrors: true,
-        video: 'retry-with-video'
+        video: 'retry-with-video',
     },
+    projects: [
+        {
+            name: 'Chromium',
+            use: { browserName: 'chromium' },
+        },
+        {
+            name: 'Firefox',
+            use: { browserName: 'firefox' },
+        },
+        {
+            name: 'Microsoft Edge',
+            use: {
+                browserName: 'chromium',
+                channel: 'msedge',   // spustí Edge namísto Chrome
+            },
+        },
+    ],
     reporter: [
         ['list'],
         ['json', { outputFile: 'test-results/results.json' }],

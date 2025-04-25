@@ -1,12 +1,10 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 export class ApiService {
     private client: AxiosInstance;
 
-    constructor(defaultHeaders: Record<string,string> = {}) {
-        this.client = axios.create({
-            headers: defaultHeaders,
-        });
+    constructor() {
+        this.client = axios.create({});
     }
 
     private async request<T>(
@@ -15,35 +13,48 @@ export class ApiService {
         data?: any,
         config?: AxiosRequestConfig
     ): Promise<AxiosResponse<T>> {
-        return this.client.request<T>({
-            url,
-            method,
-            data,
-            ...config,
-        });
+        try {
+            const res = await this.client.request<T>({ url, method, data, ...config });
+            console.log(`-----[API] ${method} ${url} -> ${res.status}`);
+            return res;
+        } catch (err) {
+            if (axios.isAxiosError(err) && err.response) {
+                console.error(`-----[API][ERROR] ${method} ${url} -> ${err.response.status}`);
+                console.error('Response body:', err.response.data);
+                return err.response;
+            }
+            //console.error(`-----[API][ERROR] ${method} ${url} ->`, (err as Error).message);
+            throw err;
+        }
     }
 
-    public async GET<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        const res = await this.request<T>('GET', url, undefined, config);
-        console.log(`-----[API] GET ${url} -> ${res.status}`);
-        return res;
+    public async GET<T = any>(
+        url: string,
+        config?: AxiosRequestConfig
+    ): Promise<AxiosResponse<T>> {
+        return this.request<T>('GET', url, undefined, config);
     }
 
-    public async POST<T = any>(url: string, body: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        const res = await this.request<T>('POST', url, body, config);
-        console.log(`-----[API] GET ${url} -> ${res.status}`);
-        return res;
+    public async POST<T = any>(
+        url: string,
+        body: any,
+        config?: AxiosRequestConfig
+    ): Promise<AxiosResponse<T>> {
+        return this.request<T>('POST', url, body, config);
     }
 
-    public async PUT<T = any>(url: string, body: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        const res = await this.request<T>('PUT', url, body, config);
-        console.log(`-----[API] GET ${url} -> ${res.status}`);
-        return res;
+    public async PUT<T = any>(
+        url: string,
+        body: any,
+        config?: AxiosRequestConfig
+    ): Promise<AxiosResponse<T>> {
+        return this.request<T>('PUT', url, body, config);
     }
 
-    public async DELETE<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        const res = await this.request<T>('DELETE', url, undefined, config);
-        console.log(`-----[API] GET ${url} -> ${res.status}`);
-        return res;
+    public async DELETE<T = any>(
+        url: string,
+        config?: AxiosRequestConfig
+    ): Promise<AxiosResponse<T>> {
+        return this.request<T>('DELETE', url, undefined, config);
     }
 }

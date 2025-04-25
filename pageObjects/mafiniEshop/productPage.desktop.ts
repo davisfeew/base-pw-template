@@ -1,6 +1,6 @@
-import {BasePage} from "../common/basePage";
+import {BasePage} from "../common/basePage.ts";
 import type {Page} from "@playwright/test";
-import {ProductPageElement} from "../../pageComponents/mafini/productPage.element";
+import {ProductPageElement} from "../../pageComponents/mafini/productPage.element.ts";
 
 export class ProductPageDesktop extends BasePage {
     public productPageElement: ProductPageElement;
@@ -8,6 +8,10 @@ export class ProductPageDesktop extends BasePage {
     constructor(page: Page) {
         super(page);
         this.productPageElement = new ProductPageElement(page);
+    }
+
+    async visit() {
+        return await super.visit(process.env.MALFINI_ESHOP_BASE_URL!);
     }
 
 
