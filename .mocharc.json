@@ -2,5 +2,15 @@
   "require": ["dotenv/config"],
   "loader": "ts-node/esm",
   "extensions": ["ts"],
-  "timeout": 10000
+  "timeout": 10000,
+  "recursive": true,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "reports",
+    "reportFilename": "api-test-report",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+    "quiet": true
+  }
 }
