@@ -1,5 +1,5 @@
 import type { Locator, Page } from "@playwright/test";
-import {BasePage} from "../../pageObjects/common/basePage";
+import {BasePage} from "../../pageObjects/common/basePage.ts";
 
 export class GoogleHomePageElement extends BasePage {
 

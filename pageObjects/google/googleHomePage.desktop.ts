@@ -1,6 +1,6 @@
-import { BasePage } from "../common/basePage";
+import { BasePage } from "../common/basePage.ts";
 import type { Page } from "@playwright/test";
-import {GoogleHomePageElement} from "../../pageComponents/google/googleHomePage.element";
+import {GoogleHomePageElement} from "../../pageComponents/google/googleHomePage.element.ts";
 
 export class GoogleHomePageDesktop extends BasePage {
     public googleHomePageElement: GoogleHomePageElement;

@@ -1,4 +1,4 @@
-import {BasePage} from "../../pageObjects/common/basePage";
+import {BasePage} from "../../pageObjects/common/basePage.ts";
 import type { Locator, Page } from "@playwright/test";
 
 export class ProductPageElement extends BasePage {
