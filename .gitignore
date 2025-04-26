@@ -6,3 +6,4 @@ dist
 /.idea/base-pw-framework.iml
 /.idea/modules.xml
 /mochawesome-report/
+/.idea/

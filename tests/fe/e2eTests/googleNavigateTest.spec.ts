@@ -1,5 +1,4 @@
 import {test, expect} from '@playwright/test';
-import 'dotenv/config';
 import {GoogleHomePageDesktop} from "../../../pageObjects/google/googleHomePage.desktop.ts";
 import {HomePageDesktop} from "../../../pageObjects/mafiniEshop/homePage.desktop.ts";
 import {ProductPageDesktop} from "../../../pageObjects/mafiniEshop/productPage.desktop.ts";
