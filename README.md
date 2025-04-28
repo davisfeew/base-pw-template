@@ -1,4 +1,4 @@
-# Playwright - mocha test framework.
+# Playwright - Mocha test framework.
 
 # How to run
     - 1 - "npm install"
