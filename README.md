@@ -1,8 +1,8 @@
 # Playwright - mocha test framework.
 
 # How to run
-1 - npm install
-2 - npx playwright install
+    1 - npm install
+    2 - npx playwright install
 
 # Hotovo:
 ## Základní testovací scénáře
@@ -20,6 +20,6 @@
 # Dotaz:
     - Testovací scénář API - V zadání jsou testy pro /users ale v dokumentaci je pouze pro /posts (https://jsonplaceholder.typicode.com/guide/)
 
-# Chybí mi:
+# Chybí dodělat:
     - Ověření výsledků vyhledávání ve vyhledávači
     - Test změna jazyka v e-shopu
