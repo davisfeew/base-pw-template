@@ -5,12 +5,12 @@
   "scripts": {
     "build": "tsc",
     "fe:test": "npx playwright test tests/fe/e2eTests/googleNavigateTest.spec.ts --headed",
-    "fe:test:browser:firefox": "npx playwright test tests/fe/parallelTests/1.spec.ts --project=Firefox --headed",
-    "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=5",
+    "fe:test:browser:chromium": "npx playwright test tests/fe/parallelTests/1.spec.ts --project=Chromium --headed --workers=1",
+    "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=3",
     "fe:parallel:test": "npx playwright test tests/fe/parallelTests/*.spec.ts --headed --workers=10",
-    "fe:responsive:test": "npx playwright test tests/fe/responsiveTest/*.spec.ts --headed --workers=5",
-    "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed --workers=5",
-    "api:test": "mocha --require ts-node/register --extensions ts tests/api/**/*.spec.ts --timeout 10000",
+    "fe:responsive:test": "npx playwright test tests/fe/responsiveTest/*.spec.ts --headed --workers=4",
+    "fe:visual:test": "npx playwright test tests/fe/visualTests/*.spec.ts --headed --workers=4",
+    "api:test:all": "mocha --require ts-node/register --extensions ts tests/api/**/*.spec.ts --timeout 10000",
     "report": "npx playwright show-report",
     "update:visual:snapshot": "npx playwright test tests/fe/visualTests --update-snapshots --headed"
   },

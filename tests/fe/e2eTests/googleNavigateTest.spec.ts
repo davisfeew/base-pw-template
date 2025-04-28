@@ -18,8 +18,8 @@ test.describe("Google navigate test", () => {
     });
     test('Verify product page after search navigate', async () => {
         const selectedName = await homePage.clickSearchDropdownByIndex(0);
-        const fullTitle = await productPage.formatSearchedTitle(productPage);
-        expect(fullTitle).toContain(selectedName);
+        const formatTitle = await productPage.formatSearchedTitle(productPage);
+        expect(formatTitle).toContain(selectedName);
         expect(await productPage.getSize()).toMatch(/^\d{2}-\d{2}$/); // verify format like 44-62
     });
 });

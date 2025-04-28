@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export class ApiService {
     private client: AxiosInstance;
@@ -15,7 +15,7 @@ export class ApiService {
     ): Promise<AxiosResponse<T>> {
         try {
             const res = await this.client.request<T>({ url, method, data, ...config });
-            console.log(`-----[API] ${method} ${url} -> ${res.status}`);
+            console.log(`-----[API] ${method} ${url} -> ${res.status}, message: ${JSON.stringify(res.data)}`);
             return res;
         } catch (err) {
             if (axios.isAxiosError(err) && err.response) {

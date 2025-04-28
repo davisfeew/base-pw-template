@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import {JsonPlaceHolderApiService} from "../../apiService/jsonPlaceHolder/jsonPlaceHolderApi.service.js";
+import {JsonPlaceHolderApiService} from "../../apiObjects/jsonPlaceHolder/jsonPlaceHolderApi.service.js";
 
 describe(`★ JsonPlaceholder API – PUT /posts`, function () {
     const jsonApi = new JsonPlaceHolderApiService();

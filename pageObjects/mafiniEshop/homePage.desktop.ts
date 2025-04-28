@@ -20,6 +20,7 @@ export class HomePageDesktop extends BasePage {
     }
 
     async typeSearchButton(searchString: string) {
+        await this.malfiniHomePageElement.searchInput.waitFor();
         await this.malfiniHomePageElement.searchInput.pressSequentially(searchString);
     }
 
