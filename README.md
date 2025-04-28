@@ -14,10 +14,7 @@
       - Ověření responzivity - tests/fe/parallelTests - "npm run fe:responsive:test"
       - Paralelní spouštění testů – tests/fe/parallelTests - "npm run fe:parallel:test"
       - Vizuální testování – tests/fe/visualTests - "npm run fe:visual:test"
-      - Vygenerování reportu z testování – Na konci exekuce se vygeneruje report. PW report (playwright-report) a Mocha report (mochawesome-report) za pomoci "Mochawesome". 
-
-# Dotaz:
-    - Testovací scénář API - V zadání jsou testy pro /users ale v dokumentaci je pouze pro /posts (https://jsonplaceholder.typicode.com/guide/)
+      - Vygenerování reportu z testování – Na konci exekuce se vygeneruje report. PW report (playwright-report) a Mocha report (mochawesome-report) za pomoci "Mochawesome".
 
 # Chybí dodělat:
     - Ověření výsledků vyhledávání ve vyhledávači
