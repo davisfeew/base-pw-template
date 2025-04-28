@@ -1,8 +1,8 @@
 # Playwright - mocha test framework.
 
 # How to run
-    - 1 - npm install
-    - 2 - npx playwright install
+    - 1 - "npm install"
+    - 2 - "npx playwright install"
 
 # Hotovo:
 ## Základní testovací scénáře
