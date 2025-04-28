@@ -4,14 +4,14 @@
 1 - npm install
 2 - npx playwright install
 
-Hotovo:
-# Základní testovací scénáře
+# Hotovo:
+## Základní testovací scénáře
       - Testovací scénář GUI - "tests/fe/e2eTests/googleNavigateTest.spec.ts"
       - Testování v různých prohlížečích - Defaultně nastaveno na Chromium Firefox a Microsoft EDGE viz nastavení "playwright.config.ts". Testy lze spiuštět i pro konkrétní prohlížeč (fe:test:browser:chromium)
       x Ověření výsledků vyhledávání ve vyhledávači
       - Ověření odpovědí z API - "tests/api"
       - Napojení na CI/CD – Jenkinsfile - Soubor pro exekuci testů v Jenkins Jobs. 
-# Rozšíření testovacího scénáře.
+## Rozšíření testovacího scénáře.
       - Ověření responzivity - tests/fe/parallelTests - "npm run fe:responsive:test"
       - Paralelní spouštění testů – tests/fe/parallelTests - "npm run fe:parallel:test"
       - Vizuální testování – tests/fe/visualTests - "npm run fe:visual:test"
