@@ -1,9 +1,13 @@
-
 import { defineConfig } from '@playwright/test';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// vytvoření __dirname v ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-    testDir: path.resolve(__dirname, './tests'),
+    testDir: path.join(__dirname, 'tests'),
     timeout: 30 * 1000,
     retries: 1,
     expect: {
