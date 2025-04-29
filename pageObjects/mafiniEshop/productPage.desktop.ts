@@ -14,6 +14,11 @@ export class ProductPageDesktop extends BasePage {
         return await super.visit(process.env.MALFINI_ESHOP_BASE_URL!);
     }
 
+    async formatSearchedTitle(productPage:ProductPageDesktop) {
+        const code = await productPage.getTitleCode();
+        const name = await productPage.getTitleName();
+        return `${code} - ${name}`;
+    }
 
     async getTitleCode() {
         return await this.productPageElement.productTitleLocator.locator('span').innerText();
@@ -29,9 +34,4 @@ export class ProductPageDesktop extends BasePage {
         return await this.productPageElement.productSizesLocator.innerText();
     }
 
-    async formatSearchedTitle(productPage:ProductPageDesktop) {
-        const code = await productPage.getTitleCode();
-        const name = await productPage.getTitleName();
-        return `${code} - ${name}`;
-    }
 }

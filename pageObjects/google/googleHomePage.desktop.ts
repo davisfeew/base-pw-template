@@ -11,10 +11,15 @@ export class GoogleHomePageDesktop extends BasePage {
     }
 
     async openSearchedMalfiniEshop() {
-    await this.navigate();
-    await this.typeSearchInput('eshop malfini', true);
-    await this.confirmReCaptchaIframeConfirmButton();
+    await this.searchMalfini();
     await this.clickGoogleResultMalfini();
+    }
+
+    async searchMalfini() {
+        await this.navigate();
+        await this.typeSearchInput('eshop malfini', true);
+        await this.confirmReCaptchaIframeConfirmButton();
+        await this.page.waitForLoadState('load');
     }
 
     async visit() {
@@ -27,7 +32,12 @@ export class GoogleHomePageDesktop extends BasePage {
     }
 
     async clickGoogleResultMalfini() {
-        await this.googleHomePageElement.googleResultMalfini.click();
+        await this.googleHomePageElement.googleResultMalfiniUrl.click();
+    }
+
+    async getGoogleResultMalfiniUrl() {
+        return this.googleHomePageElement.googleResultMalfiniUrl;
+
     }
 
     async confirmReCaptchaIframeConfirmButton() {
@@ -37,7 +47,7 @@ export class GoogleHomePageDesktop extends BasePage {
         await this.googleHomePageElement.reCaptchaIframeConfirmButton.click();
         }
         } catch {
-            console.log('Confirm button not found in google reCaptcha, continuing...');
+            console.log('Confirm button not found in googleTests reCaptcha, continuing...');
         }
     }
 

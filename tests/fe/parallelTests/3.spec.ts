@@ -11,7 +11,7 @@ test.describe("3. parallel test", () => {
         productPage = new ProductPageDesktop(page);
 
         await homePage.navigate();
-        await homePage.typeSearchButton('vertex');
+        await homePage.typeSearchInput('vertex');
     });
     test('Verify product page after search navigate', async () => {
         const selectedName = await homePage.clickSearchDropdownByIndex(0);

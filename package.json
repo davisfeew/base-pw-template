@@ -1,10 +1,11 @@
 {
   "name": "playwright-basic-framework",
-  "version": "1.0.0",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "fe:test": "npx playwright test tests/fe/e2eTests/googleNavigateTest.spec.ts --headed",
+    "fe:test:eshop:language": "npx playwright test tests/fe/e2eTests/malfinyTests/languageTest.spec.ts --project=Chromium  --headed --workers=1",
+    "fe:test:google:tests": "npx playwright test tests/fe/e2eTests/googleTests/*.spec.ts --project=Chromium --headed --workers=1",
     "fe:test:browser:chromium": "npx playwright test tests/fe/parallelTests/1.spec.ts --project=Chromium --headed --workers=1",
     "fe:e2e:test": "npx playwright test tests/fe/e2eTests/*.spec.ts --headed --workers=3",
     "fe:parallel:test": "npx playwright test tests/fe/parallelTests/*.spec.ts --headed --workers=10",

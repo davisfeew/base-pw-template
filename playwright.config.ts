@@ -1,14 +1,11 @@
-import {defineConfig} from '@playwright/test';
-import {resolve, dirname} from 'path';
-import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { defineConfig } from '@playwright/test';
+import path from 'path';
 
 export default defineConfig({
-    testDir: resolve(__dirname, './tests'),
+    testDir: path.resolve(__dirname, './tests'),
     timeout: 30 * 1000,
-    retries: 0,
+    retries: 1,
     expect: {
         toHaveScreenshot: {
             maxDiffPixelRatio: 0.02,
@@ -16,10 +13,11 @@ export default defineConfig({
     },
     snapshotPathTemplate: 'tests/fe/__snapshots__/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}-{platform}{ext}',
     use: {
-        headless: false,
+        headless: process.env.CI ? true : false,
         viewport: {width: 1280, height: 720},
         ignoreHTTPSErrors: true,
         video: 'retry-with-video',
+        screenshot: 'only-on-failure',
     },
     projects: [
         {

@@ -16,6 +16,11 @@ export class BasePage {
         await this.page.reload({ waitUntil: "domcontentloaded" });
     }
 
+    async waitForPreloaderHidden() {
+        await this.page.waitForSelector('#preloader', { state: 'hidden', timeout: 10000 });
+
+    }
+
     async isElementVisible(locator: Locator, timeout = 15000) {
         try {
             await locator.waitFor({ state: "visible", timeout: timeout });

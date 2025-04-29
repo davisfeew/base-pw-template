@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -11,5 +11,7 @@
     "outDir": "dist",
     "types": ["node", "mocha", "chai", "@playwright/test"]
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
+  "include": ["src/**/*.ts", "tests/**/*.ts",
+    "playwright.config.ts"
+  ]
 }
