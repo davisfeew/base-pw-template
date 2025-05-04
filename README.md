@@ -17,7 +17,3 @@
       - Paralelní spouštění testů – tests/fe/parallelTests - "npm run fe:parallel:test"
       - Vizuální testování – tests/fe/visualTests - "npm run fe:visual:test"
       - Vygenerování reportu z testování – Na konci exekuce se vygeneruje report. PW report (playwright-report) a Mocha report (mochawesome-report) za pomoci "Mochawesome".
-
-
-Obrazek z reportu  - Vizuální testování
-![img.png](img.png)
