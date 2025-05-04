@@ -70,6 +70,7 @@ export class HomePageDesktop extends BasePage {
         if (await this.malfiniHomePageElement.cookiesAllowButton.isVisible()) {
             await this.malfiniHomePageElement.cookiesAllowButton.waitFor({state: "visible"});
             await this.malfiniHomePageElement.cookiesAllowButton.click();
+            await this.malfiniHomePageElement.cookiesAllowButton.waitFor({state: "hidden"});
         }
     }
 
