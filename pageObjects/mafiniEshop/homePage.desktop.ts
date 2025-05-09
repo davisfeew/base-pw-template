@@ -23,7 +23,7 @@ export class HomePageDesktop extends BasePage {
 
     async typeSearchInput(searchString: string) {
         await this.malfiniHomePageElement.searchInput.waitFor();
-        await this.malfiniHomePageElement.searchInput.pressSequentially(searchString);
+        await this.malfiniHomePageElement.searchInput.pressSequentially(searchString, {delay: 50,});
     }
 
     /**
@@ -71,6 +71,7 @@ export class HomePageDesktop extends BasePage {
             await this.malfiniHomePageElement.cookiesAllowButton.waitFor({state: "visible"});
             await this.malfiniHomePageElement.cookiesAllowButton.click();
             await this.malfiniHomePageElement.cookiesAllowButton.waitFor({state: "hidden"});
+            await this.malfiniHomePageElement.page.waitForTimeout(250);
         }
     }
 

@@ -9,6 +9,7 @@ export class GoogleHomePageElement extends BasePage {
     reCaptchaIframeConfirmButton: Locator;
     googleResultMalfiniUrl: Locator;
     googleResultMalfiniTitle: Locator;
+    googleSearchConfirmButton: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -19,5 +20,6 @@ export class GoogleHomePageElement extends BasePage {
         this.reCaptchaIframeConfirmButton = this.page.frameLocator('iframe[title="reCAPTCHA"]').locator('div[class="recaptcha-checkbox-border"]');
         this.googleResultMalfiniUrl = this.page.locator('a[href="https://shop.malfini.com/cz/cs"]');
         this.googleResultMalfiniTitle = this.page.locator('a[href="https://shop.malfini.com/cz/cs"] h3');
+        this.googleSearchConfirmButton = this.page.locator('input[name="btnK"]');
     }
 }

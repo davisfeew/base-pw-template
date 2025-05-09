@@ -56,10 +56,16 @@ export class GoogleHomePageDesktop extends BasePage {
     }
 
     async typeSearchInput(searchText: string, confirmSearch: boolean) {
-        await this.googleHomePageElement.searchTextarea.pressSequentially(searchText);
+        await this.googleHomePageElement.searchTextarea.pressSequentially(searchText, {delay: 50,});
         if (confirmSearch) {
-            await this.clickConfirmSearchButton();
+            await this.clickConfirmSearch();
         }
+
+
+    }
+
+    async clickConfirmSearch() {
+        await this.googleHomePageElement.googleSearchConfirmButton.nth(1).click();
     }
 
     async clickRejectAllButton() {
